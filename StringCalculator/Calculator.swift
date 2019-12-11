@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class Calculator {
+    func add(String: input_string) -> Int {
+        
+    }
+}
