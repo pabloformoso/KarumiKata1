@@ -26,8 +26,27 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertEqual(3, result)
     }
     
+    func testReturnsTheNumberWithNumberPerLine() {
+        let result = add("1\n2\n3")
+        XCTAssertEqual(6, result)
+    }
+    
     private func add(_ number: String) -> Int {
-        return 0
+        if number.isEmpty { return 0 }
+        
+        let separators = CharacterSet(charactersIn: "\n,,")
+        
+        // Data pereparation
+        let intArray = number.components(separatedBy: separators).map { Int($0) }
+        
+        //Operational
+        var sum = 0
+        
+        for value in intArray {
+            sum += value!
+        }
+        
+        return sum
     }
 
 }
