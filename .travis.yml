@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode11.2
+xcode_project: ./StringCalculator.xcodeproj
+xcode_scheme: StringCalculator
+xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
