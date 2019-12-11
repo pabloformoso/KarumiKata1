@@ -9,7 +9,24 @@
 import Foundation
 
 class Calculator {
-    func add(String: input_string) -> Int {
+    var input_string: String
+    
+    init(stringToCalculate: String) {
+        input_string = stringToCalculate
+    }
+
+    
+    func add() -> Int {
+        // Data pereparation
+        let intArray = input_string.components(separatedBy: ",").map { Int($0) }
         
+        //Operational
+        var sum = 0
+        
+        for value in intArray {
+            sum += value!
+        }
+        
+        return sum
     }
 }

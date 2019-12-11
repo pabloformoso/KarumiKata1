@@ -10,29 +10,24 @@ import XCTest
 @testable import StringCalculator
 
 class StringCalculatorTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testReturnZoreIfTheInputIsEmpty() {
+        let result = add("")
+        XCTAssertEqual(0, result)
     }
     
-    func testReturnInteger() {
-        
+    func testReturnsTheNumberIsJustOne() {
+        let result = add("1")
+        XCTAssertEqual(1, result)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testReturnsTheNumbersAreMoreThanOne() {
+        let result = add("1,2")
+        XCTAssertEqual(3, result)
+    }
+    
+    private func add(_ number: String) -> Int {
+        return 0
     }
 
 }
